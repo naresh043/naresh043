@@ -1,4 +1,4 @@
-name: GitHub Profile 3D
+name: GitHub Profile 3D Contribution
 
 on:
   workflow_dispatch:
@@ -16,12 +16,12 @@ jobs:
         uses: yoshi389111/github-profile-3d-contrib@0.7.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          USERNAME: shannu1653
+          USERNAME: naresh043
 
       - name: Commit files
         run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
           git add .
-          git commit -m "update 3d graph" || echo "nothing to commit"
+          git commit -m "update 3D contribution graph" || echo "No changes"
           git push
